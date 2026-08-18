@@ -24,6 +24,15 @@ const server = http.createServer((req, res) => {
         return;
     }
 
+        if(req.method === "GET" && req.url === '/sobre') {
+        res.writeHead(200, {
+            "Content-Type": "text/html"
+        });
+        res.end("<h1>Sobre</h1>");
+        return;
+    }
+    
+
 });
 
 server.listen(PORT, () => console.log(`Servidor em http://localhost:${PORT}`));
